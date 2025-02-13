@@ -1,11 +1,11 @@
 {
   "version": "6",
   "dialect": "sqlite",
-  "id": "3e6aae1a-2252-4fdc-9250-5826225407d6",
-  "prevId": "602bef74-ebb6-4160-97ce-c2dbb97dc196",
+  "id": "9165d44b-119a-4d24-a8f5-bd034ee54469",
+  "prevId": "13b82c01-9073-4f79-8f8b-f5c5e512bd9c",
   "tables": {
-    "game_rooms": {
-      "name": "game_rooms",
+    "game_results": {
+      "name": "game_results",
       "columns": {
         "id": {
           "name": "id",
@@ -14,15 +14,8 @@
           "notNull": true,
           "autoincrement": true
         },
-        "p1_address": {
-          "name": "p1_address",
-          "type": "text",
-          "primaryKey": false,
-          "notNull": true,
-          "autoincrement": false
-        },
-        "p2_address": {
-          "name": "p2_address",
+        "p1_move": {
+          "name": "p1_move",
           "type": "text",
           "primaryKey": false,
           "notNull": true,
@@ -35,29 +28,12 @@
           "notNull": true,
           "autoincrement": false
         },
-        "p1_timeout": {
-          "name": "p1_timeout",
-          "type": "integer",
-          "primaryKey": false,
-          "notNull": true,
-          "autoincrement": false,
-          "default": false
-        },
-        "p2_timeout": {
-          "name": "p2_timeout",
-          "type": "integer",
-          "primaryKey": false,
-          "notNull": true,
-          "autoincrement": false,
-          "default": false
-        },
         "result": {
           "name": "result",
           "type": "text",
           "primaryKey": false,
           "notNull": true,
-          "autoincrement": false,
-          "default": "'pending'"
+          "autoincrement": false
         },
         "created_at": {
           "name": "created_at",

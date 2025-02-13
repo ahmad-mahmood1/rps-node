@@ -1,1 +1,0 @@
-ALTER TABLE `game_rooms` ALTER COLUMN "result" TO "result" text NOT NULL DEFAULT 'pending';

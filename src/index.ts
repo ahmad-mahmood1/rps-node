@@ -11,8 +11,10 @@ import express from 'express';
 import http from 'http';
 import { Server } from 'socket.io';
 
-import gameRoomRouter from 'src/routers/gameRoomRouter';
+import hashRouter from 'src/routers/hashRouter';
+import contractRouter from 'src/routers/contractRouter';
 import { gameRoomEvents } from 'src/socketio/eventHandlers';
+import gameResultsRouter from 'src/routers/gameResultsRouter';
 
 const app = express();
 app.use(express.json());
@@ -22,6 +24,8 @@ const allowedOrigins = [];
 
 if (process.env.ENV === 'dev') {
   allowedOrigins.push('http://localhost:5173');
+} else {
+  allowedOrigins.push(process.env.APP_BASE_URL || '');
 }
 
 app.use(
@@ -32,7 +36,9 @@ app.use(
 
 app.use(morgan('tiny'));
 
-app.use('/game-rooms', gameRoomRouter);
+app.use('/hash', hashRouter);
+app.use('/contract', contractRouter);
+app.use('/gameResults', gameResultsRouter);
 
 const server = http.createServer(app);
 const ioServer = new Server(server);

@@ -1,0 +1,1 @@
+ALTER TABLE `game_results` ADD `p2_move` text DEFAULT '' NOT NULL;
