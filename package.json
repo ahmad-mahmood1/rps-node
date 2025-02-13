@@ -1,0 +1,48 @@
+{
+  "name": "rps-node",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon",
+    "build": "tsc",
+    "start": "npm run build && node build/src/index.js",
+    "db:generate": "drizzle-kit generate",
+    "db:migrate": "drizzle-kit migrate"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@eslint/js": "^9.20.0",
+    "@types/express": "^5.0.0",
+    "@types/node": "^22.13.1",
+    "drizzle-kit": "^0.30.4",
+    "eslint": "^9.20.0",
+    "globals": "^15.14.0",
+    "nodemon": "^3.1.9",
+    "tsconfig-paths": "^4.2.0",
+    "typescript": "^5.7.3",
+    "typescript-eslint": "^8.23.0"
+  },
+  "dependencies": {
+    "@hono/node-server": "^1.13.8",
+    "@hono/node-ws": "^1.0.7",
+    "@hono/zod-validator": "^0.4.2",
+    "@libsql/client": "^0.14.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "drizzle-orm": "^0.39.2",
+    "express": "^4.21.2",
+    "hono": "^4.6.20",
+    "module-alias": "^2.2.3",
+    "morgan": "^1.10.0",
+    "socket.io": "^4.8.1",
+    "ts-node": "^10.9.2",
+    "viem": "^2.22.23",
+    "zod": "^3.24.1",
+    "zod-express-middleware": "^1.4.0"
+  },
+  "_moduleAliases": {
+    "src": "./build/src"
+  }
+}
