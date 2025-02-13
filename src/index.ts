@@ -22,6 +22,8 @@ const allowedOrigins = [];
 
 if (process.env.ENV === 'dev') {
   allowedOrigins.push('http://localhost:5173');
+} else {
+  allowedOrigins.push(process.env.APP_BASE_URL || '');
 }
 
 app.use(
